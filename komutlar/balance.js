@@ -1,37 +1,28 @@
+var Jimp = require('jimp');
 const Discord = require('discord.js');
-const jimp = require('jimp')
 
-exports.run = (client, message, args) => {
-    var img = "./img/balance/balance.png"
-    
-  var profileURL = message.author.avatarURL
-  var images = [profileURL , img];
-  var jimps = [];
-  for (var i = 0; i< images.length; i++) {
-    jimps.push(jimp.read(images[i]));
-  }
-  Promise.all(jimps).then(function(data) {
-    return Promise.all(jimps);
-  }).then(function(data) {
-    data[0].resize(512,512)
-    data[1].resize(512,512)
-    data[0].composite(data[1],0,0)
-    data[0].write("./images.png" , function() {
-      message.channel.sendFile("./images.png")
+module.exports.run = async (bot, message, args) => {
 
-    })
-  })
-}
+  var user = message.mentions.users.first() || message.author;
+      message.channel.startTyping();
+        var user = message.mentions.users.first() || message.author;
+        if (!message.guild) user = message.author;
 
-exports.conf = {
-    enabled: true,
-    guildOnly: true,
-    aliases: [],
-    permLevel: 0
-}
+        Jimp.read(user.avatarURL, (err, image) => {
+            image.resize(295, 295)
+            image.greyscale()
+            image.gaussian(3)
+            Jimp.read("https://cdn.glitch.com/b18a2fa6-68cb-49d5-9818-64c50dd0fdab%2F1.png?1529363616039", (err, avatar) => {
+                avatar.resize(295, 295)
+                image.composite(avatar, 4, 0).write(./img/wasted/${bot.user.id}-${user.id}.png);
+                setTimeout(function() {
+                    message.channel.send(new Discord.Attachment(./img/wasted/${bot.user.id}-${user.id}.png));
+                }, 1000);
+          message.channel.stopTyping();
+            });
+        });
+    };
 
-exports.help = {
-    name: "balance",
-    description: "Etiketlenen kullanıcıya balance efekti verir.",
-    usage: "balance"
+module.exports.help = {
+  name: 'wasted'
 };
