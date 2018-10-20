@@ -23,7 +23,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'gif',
-  description: 'Rastgele gif atar.',
-  usage: 'gif'
+  name: 'komikgif',
+  description: 'Rastgele Komik Gif Atar.',
+  usage: 'komikgif'
 };
