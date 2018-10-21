@@ -42,7 +42,7 @@ const Discord = require('discord.js');
 };
 
 exports.help = {
-  name: 'gelişmişoylama',
+  name: 'oylama',
   description: 'Oylama yapmanızı sağlar.',
-  usage: 'gelişmişoylama <oylamaismi>'
+  usage: 'oylama <oylamaismi>'
 };
