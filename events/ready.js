@@ -13,7 +13,7 @@ console.log('Bot hazır ve giriş yaptı.');
 
         "?yardım ßy SemihMehmetTR",
     
-        "🔥?Komikgif Komutu Aktif🔥",
+        "🔥?Aşkölçer Komutu Aktif🔥",
         
         `${client.users.size} Kullanıcı İçin Teşekkürler`,
         
