@@ -390,32 +390,6 @@ client.on('message', msg => {
   }
 });
 
-client.on('guildCreate', guild => {
-    let channel = client.channels.get("480422890508910603")//botun girdiyi sunucuyu kanala gönderelim
-    const embed = new Discord.RichEmbed()
-        .setColor("GREEN")
-        .setAuthor(`Giriş ${guild.name}`)
-        .setThumbnail(guild.iconURL)
-        .addField("464471005444833280 ", guild.owner.user.tag)
-        .addField("474647714848833547", guild.id, true)
-        .addField("Toplam Kullanıcı", guild.memberCount, true)
-        .addField("Toplam Kanal", guild.channels.size, true)
-    channel.send(embed);
-});
-client.on('guildDelete', guild => { 
-    let channel = client.channels.get("480422890508910603")//botun çıktıgı sunucuyu kanala gönderelim
-
-    const embed = new Discord.RichEmbed()
-        .setColor("RED")
-        .setAuthor(`Çıkış ${guild.name}`)
-        .setThumbnail(guild.iconURL)
-        .addField("464471005444833280", guild.owner.user.tag)
-        .addField("474647714848833547", guild.id, true)
-        .addField("Toplam Kullanıcı", guild.memberCount, true)
-        .addField("Toplam Kanal", guild.channels.size, true)
-    channel.send(embed);
-});
-
 const discord = require('discord.js');
 
 client.elevation = message => {
