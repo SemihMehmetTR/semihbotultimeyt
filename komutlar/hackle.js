@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
     .setAuthor('')
     .setColor(3447003)
     .setDescription(`** ${mesaj} ` + message.author.username + 'Senin Bilgisayarına Sızdı Maalesef Yapabileceğin Birşey Yok**')
-		.setImage(`https://tenor.com/view/cyberpunk-hacker-gif-5648648`)
+		.setImage(`https://media.tenor.com/images/7c37724f05ed6d2272d1eaa00d0b06a9/tenor.gif`)
     return message.channel.sendEmbed(embed);
 };
 
