@@ -396,8 +396,8 @@ client.on('guildCreate', guild => {
         .setColor("GREEN")
         .setAuthor(`Giriş ${guild.name}`)
         .setThumbnail(guild.iconURL)
-        .addField("Kurucu ", guild.owner.user.tag)
-        .addField("Sunucu ID", guild.id, true)
+        .addField("464471005444833280 ", guild.owner.user.tag)
+        .addField("474647714848833547", guild.id, true)
         .addField("Toplam Kullanıcı", guild.memberCount, true)
         .addField("Toplam Kanal", guild.channels.size, true)
     channel.send(embed);
@@ -409,8 +409,8 @@ client.on('guildDelete', guild => {
         .setColor("RED")
         .setAuthor(`Çıkış ${guild.name}`)
         .setThumbnail(guild.iconURL)
-        .addField("Kurucu", guild.owner.user.tag)
-        .addField("Sunucu ID", guild.id, true)
+        .addField("464471005444833280", guild.owner.user.tag)
+        .addField("474647714848833547", guild.id, true)
         .addField("Toplam Kullanıcı", guild.memberCount, true)
         .addField("Toplam Kanal", guild.channels.size, true)
     channel.send(embed);
